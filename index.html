@@ -16,29 +16,40 @@
     <header>
     </header>
     <main>
-        <section class="main-section">
-           
-            <div class=" top-left">
-                <div class="defeated">
-                You have defeated <span>0</span> goblins.
+        
+
+            <div class='adventurer-stats'>
+                <div class='defeated'>
+                <p>You have defeated <span id ='defeated-number'>0</span> goblins.</p>
                 </div>
             </div>
 
-            <div class ='middle-left'>
-                <div class='hit-points'>
-                Your HP:<span id="hit-points-number"></span>
-                </div>
+
+
+            <div class ='adventurer'>
+                <p>Your HP:<span id= 'adventurer-hit-points'> 0</span></p>
             </div>
 
-            <div class = 'top right'>
-                <button class="challenge-goblin">Challenge Goblin 
-                    <input value=""/>
-                </button>
-                </div>
+
+            <div class ='goblin-stats'>
+                    <form>
+                        <input id ='goblin-name'/>
+                        <button id = 'challenge-button'> Challenge Button </button>
+                    </form>
+                <div class= 'goblins'>
+
+
+                </div>  
             </div>
+
+
 
         </section>
     </main>
+
+
+
+
     <footer>
         <div class="copy gutter-right">&copy; 2021 Alchemy Code Lab</div>
     </footer>

@@ -1,4 +1,5 @@
 
+
 body {
     /* feel free to update these css variables for a quick theme */
     
@@ -29,7 +30,9 @@ body {
     
     font-family: 'Titillium Web', sans-serif;
     background-color: var(--color2);
-}
+    background-image: url(../assets/beach-goblins.jpg);
+    background-size: 105%;
+    background-position: center;
 
 main {
     display: flex;
