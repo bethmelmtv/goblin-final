@@ -27,12 +27,9 @@ body {
     --shadow: 0px 10px 20px -12px rgba(0,0,0,0.45);
     --gutter: 30px;
     --footer-height: 25px;
-    
     font-family: 'Titillium Web', sans-serif;
     background-color: var(--color2);
-    background-image: url(../assets/beach-goblins.jpg);
-    background-size: 105%;
-    background-position: center;
+}
 
 main {
     display: flex;
@@ -81,6 +78,7 @@ header img {
 p {
     margin: var(--gutter);
 }
+
   
 footer {
     position: fixed;
@@ -92,3 +90,82 @@ footer {
     background-color: var(--color3);
     box-shadow: var(--shadow);
 }
+
+.adventurer-stats {
+    width: 50%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+
+}
+.adventurer {
+    color: #660000;
+    font-size: 5rem;
+    font-weight: 900;
+    font-family:Arial, Helvetica, sans-serif;
+    text-align: center;
+    padding: 5px;
+}
+
+.adventurer p {
+    background-color: brown;
+    border-radius: 15px;
+    padding: 20px;
+}
+
+.goblin-stats {
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.goblin-stats input, .goblin-stats button {
+    height: 100px;
+}
+
+.goblin-stats button {
+    font-size: 2em;
+}
+.goblin-stats input {
+    font-size: 3rem;
+    width: 80%
+}
+
+.defeated-goblins { 
+    text-align: center;
+} 
+
+.defeated-goblins p {
+    font-size: 2rem;
+    color: white;
+    background-color: rebeccapurple;
+    padding: 20px;
+    border-radius: 15px;
+
+}
+
+form {
+    padding: 20px;
+    display: flex;
+}
+
+
+.goblins {
+    cursor: pointer;
+    border: solid 3px #5d086d;
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20px;
+    background-color: #dda1eb;
+    justify-self: flex-end;
+    font-size: 3rem;
+}
+
