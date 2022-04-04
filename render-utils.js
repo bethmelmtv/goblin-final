@@ -9,23 +9,20 @@ export function renderGoblin(goblinData) { //goblinData is a BOOGER
 
     goblinEl.classList.add('goblin');
 
-}
-
     goblinName.textContent = goblinData.name;
-    hpEl.textContent = goblinData.HP < 0 ? 0 : goblinData.HP; // not sure what this line means 
+    hpEl.textContent = goblinData.hp < 0 ? 0 : goblinData.hp; // not sure what this line means 
 
 
   // use a weird "ternery" to set the face
   // if the goblin lives, do a imp emoji, else do a fire emoji
 
+    goblinFace.textContent = goblinData.hp > 0 ? '😈' : '🔥' ;
 
-    goblinFace.textContent = goblinData.HP > 0 ? '😈' : '🔥' ;
-
-    if (goblinData.HP < 0) { 
-    goblinEl.classList.add('dead');
+    if (goblinData.hp < 0) { 
+        goblinEl.classList.add('dead');
     }
 
-    goblinEl.append(goblinName,goblinFace,hpEl)
+    goblinEl.append(goblinName, goblinFace, hpEl);
 
     return goblinEl;
 }

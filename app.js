@@ -1,26 +1,121 @@
+// import functions and grab DOM elements
 import { renderGoblin } from './render-utils.js';
 
 
-const defeatedNumberEl = document.querySelector('#defeated-number');
-const hitPointStatusEl = document.querySelector('#hit-point-status');
-const form = document.querySelector('form');
-const goblinListEl = document.querySelector('#goblins') ;
+const defeatedNumberEl = document.querySelector('#defeated-number'); //
+const hitPointStatusEl = document.querySelector('#hit-point-status');//
+const form = document.querySelector('form');//
+const goblinListEl = document.querySelector('.goblins') ;//
+// const challengeButtonEl = document.querySelector('.challenge-goblin-button');
 
-//state
+
+// let state
 let defeatedGoblinsCount = 0;
 let playerHP = 10;
 
 //create an object that contains the info of different goblins, not sure why its within an array
 let goblins = [
-    { name: 'Terry', HP: 10 },
-    { name: 'Bob', HP: 5 },
+    { name: 'Terry', hp: 10 },
+    { name: 'Bob', hp: 5 },
 ];
 
+// - New goblin form
+form.addEventListener('submit', (e) => {
+    e.preventDefault();
+      //   - User has supplied a name and submitted the form
+    const data = new FormData(form);
+
+
+     //Make a new goblin object with that user input
+    //data.get is a function
+    //data.get is referencing input class in html
+    const newGoblin = {
+        name: data.get('challenge-goblin'),
+        hp: 3,
+    };
+
+    //   - Add the object from the form the array of goblins in state
+    goblins.push(newGoblin);
+
+    displayGoblins();
+});
+
+
+function displayGoblins() {
+
+    //  clear out the list DOM
+    goblinListEl.textContent = '';
+    // for each goblin, render it and append it to to dom element 
+    for (let goblin of goblins) {
+        const goblinEl = renderGoblin(goblin);
+        // console.log(goblinEl);
+    
+        if (goblin.hp > 0) {
+            goblinEl.addEventListener('click', () => {
+            
+            // if you hit the goblin, their hp goes down 
+                if (Math.random() < .50) {
+                    alert('You hit ' + goblin.name);
+                    goblin.hp--;
+                } else {
+                    alert('you tried to hit ' + goblin.name + ' but missed!');
+                }
+
+                if (Math.random() > .50) {
+                    alert(goblin.name + ' hit you!');
+                    playerHP--;
+                } else { 
+                    alert(goblin.name + ' tried to hit you but missed!');
+                }
+
+                if (goblin.hp === 0) {
+                    alert(goblin.name + ' is DEAD!');
+                    defeatedGoblinsCount++;
+                }
+
+
+                if (playerHP === 0) {
+                    alert('YOU IS DEAD! GAME OVER');
+                }
+    
+                hitPointStatusEl.textContent = playerHP;
+                defeatedNumberEl.textContent = defeatedGoblinsCount;
+
+                displayGoblins();
+            });
+        }
+
+        goblinListEl.append(goblinEl);
+
+    }
+
+}
+    
+displayGoblins(); // to be called recursively 
 
 
 
 
 
+
+
+//Find all the 'events' (user clicks, form submit, on load etc) in your app. Ask one by one, 
+//"What happens when" for each of these events. Does any state change? Does any DOM update?
+
+
+
+    // //
+    // for (let goblin of goblins) {
+    //     renderGoblin(goblin)
+
+//create an event listener 
+
+
+
+
+//-user click submit form
+
+//render and append input
 
 
 

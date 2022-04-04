@@ -91,6 +91,18 @@ footer {
     box-shadow: var(--shadow);
 }
 
+
+
+
+
+
+
+
+
+
+
+
+
 .adventurer-stats {
     width: 50%;
     height: 100%;
@@ -100,7 +112,7 @@ footer {
     justify-content: space-between;
 }
 
-}
+
 .adventurer {
     color: #660000;
     font-size: 5rem;
@@ -153,15 +165,16 @@ footer {
 form {
     padding: 20px;
     display: flex;
+    justify-content: flex-end;
 }
 
 
-.goblins {
+#goblins {
     cursor: pointer;
     border: solid 3px #5d086d;
     border-radius: 5px;
     display: flex;
-    justify-content: center;
+    justify-content: flex-end;
     align-items: center;
     margin: 20px;
     background-color: #dda1eb;
@@ -169,3 +182,9 @@ form {
     font-size: 3rem;
 }
 
+
+.goblin {
+    background-color:pink;
+    border-radius: 25px;
+    align-items: center;
+}
